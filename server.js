@@ -23,6 +23,10 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+
 
 // Config data from config.js file
 const client_id = config.client_id;
@@ -48,7 +52,28 @@ app.get('/', function(req, res){
 
     // If auth_token is stored in a session cookie it sends a button to get user info
     } else {
-        res.send("Successfully authenticated. <br><br> Your oauth access_token: " +req.session.access_token + "<br><br><button onclick='window.location.href=\"/user_info\"'>Get my user info</button>");
+        //res.send("Successfully authenticated. <br><br> Your oauth access_token: " +req.session.access_token + "<br><br><button onclick='window.location.href=\"/user_info\"'>Get my user info</button>");
+        const url = config.idmURL + '/user';
+
+        // Using the access token asks the IDM for the user info
+        oa.get(url, req.session.access_token)
+        .then (response => {
+
+            const user = JSON.parse(response);
+
+            //remove when keyrock attributes
+            user.attributes = { vision_level: 0, colour_perception: 0, hearing_level: 100, vocal_capability: 1 };
+
+            if(user.attributes.vision_level < 100 && user.attributes.vision_level != 0){
+            
+                res.render('response2', { name: user.username, email: user.email });
+            } else if (user.attributes.vision_level == 0){
+                res.send("<h1>Welcome page</h1><p>Welcome " + user.username + " Your email address is " + user.email + "</p><button onclick='window.location.href=\"/logout\"'>Log out</button>");              
+            } else {
+                 res.render('response1', { name: user.username, email: user.email });
+            }
+            
+        });
     }
 });
 
