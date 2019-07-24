@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const http = require('http');
 const port = 80;
+const sass = require('node-sass-middleware');
 
 
 // Express configuration
@@ -22,6 +23,20 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
+//sass
+app.use(
+    sass({
+        src: __dirname + '/sass',    // Input SASS files
+        dest: __dirname + '/public', // Output CSS
+        debug: true,
+        outputStyle: 'compressed',
+        indentedSyntax: true              
+    }),
+    express.static('public')
+);
+
+//app.use();
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -48,7 +63,8 @@ app.get('/', function(req, res){
 
     // If auth_token is not stored in a session cookie it sends a button to redirect to IDM authentication portal 
     if(!req.session.access_token) {
-        res.send("Oauth2 IDM Demo.<br><br><button onclick='window.location.href=\"/auth\"'>Log in with FI-WARE Account</button>");
+        //res.send("Oauth2 IDM Demo.<br><br><button onclick='window.location.href=\"/auth\"'>Log in with FI-WARE Account</button>");
+        res.render('response0');
 
     // If auth_token is stored in a session cookie it sends a button to get user info
     } else {
@@ -60,17 +76,25 @@ app.get('/', function(req, res){
         .then (response => {
 
             const user = JSON.parse(response);
-
-            //remove when keyrock attributes
-            user.attributes = { vision_level: 0, colour_perception: 0, hearing_level: 100, vocal_capability: 1 };
-
-            if(user.attributes.vision_level < 100 && user.attributes.vision_level != 0){
             
+            //remove when keyrock attributes
+            user.attributes = { vision: 0, colour_perception: 0, hearing: 100, vocal_capability: 0, cognition: 60 };
+
+            // LOW VISION
+            if(user.attributes.vision < 85 && user.attributes.vision != 0){
+                res.render('response1', { name: user.username, email: user.email, high_contrast: true });
+            }
+            // BLIND
+            else if(user.attributes.vision >= 85){
+                //res.render('response1', { name: user.username, email: user.email });
+            }
+            // COGNITION
+            else if(user.attributes.cognition > 50){
                 res.render('response2', { name: user.username, email: user.email });
-            } else if (user.attributes.vision_level == 0){
-                res.send("<h1>Welcome page</h1><p>Welcome " + user.username + " Your email address is " + user.email + "</p><button onclick='window.location.href=\"/logout\"'>Log out</button>");              
-            } else {
-                 res.render('response1', { name: user.username, email: user.email });
+            }
+            // DEFAULT
+            else{
+                res.render('response1', { name: user.username, email: user.email, high_contrast: false });
             }
             
         });

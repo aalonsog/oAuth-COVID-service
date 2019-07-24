@@ -1,5 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Static Website | response 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<article style="background-color: black; color: white; padding: 40px; font-size: 2.5em;">
-	Welcome <%= name %>  <br> Your email address is <%= email %>  <br><br>
-	<button onclick='window.location.href=\"/logout\"'>Log out</button>
-</article>
+	<nav>
+		<div class="title">Blog</div>
+		<div class="userblock">
+			<div class="user">
+				<div class="name">Hello <%= name %></div>
+			</div>
+			<img src="http://www.arasaac.org/repositorio/thumbs/10/200/2/28689.png" alt="Exit">
+			<button onclick="window.location.href='\logout'">
+				Exit
+			</button>
+		</div>
+		
+	</nav>
+	<img class="headerimg" src="http://placekitten.com/1200/250" alt="Kitten"/>
+	<article>
+		
+		<div class="author">
+			<div class="imgauthor">
+				
+				<img src="http://www.arasaac.org/repositorio/thumbs/10/200/2/2380.png" alt="Kitten2">
+				<img src="http://placekitten.com/60/60" alt="Kitten2">
+			</div>
+			<div class="data">
+				<div class="name">Pepe Pruebas has written the text</div>
+				<div class="metadata">He wrote it on Jun 20, 2019</div>
+			</div>
+			
+		</div>
+		<h1>Titulo del artículo</h1>
+		<div class="boxcontent">
+			<div class="block">
+				<img src="http://www.arasaac.org/repositorio/thumbs/10/200/9/9881.png" alt="">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et libero ut elit dignissim venenatis nec quis diam. Nullam finibus justo eget egestas interdum. Sed augue magna, euismod vitae nunc vitae, tristique maximus tortor. Curabitur velit leo, varius vel nunc nec, cursus porttitor quam. Nam ornare, leo vel aliquet euismod, orci arcu maximus neque, vel blandit dui urna nec magna. Vestibulum rutrum vehicula magna at condimentum.  </p>	
+			</div>
+			<div class="block">
+				<img src="http://www.arasaac.org/repositorio/thumbs/10/200/9/9879.png" alt="">
+				<p>Nam ante risus, lobortis vel diam et, vestibulum pulvinar quam. In nec eleifend sapien. Nulla accumsan nulla ac dui posuere, nec aliquam diam bibendum. Mauris sit amet venenatis mauris. Nullam fermentum bibendum turpis, quis scelerisque lorem iaculis id. In quis cursus dui. Curabitur tincidunt vestibulum enim, nec interdum ex venenatis ut. Mauris quam dui, vehicula id ipsum quis, tristique posuere nisi. </p>
+			</div>
+			<div class="block">
+				<img src="http://www.arasaac.org/repositorio/thumbs/10/200/7/7114.png" alt="">
+				<p>Morbi massa ipsum, ullamcorper at libero in, cursus auctor ex. Aliquam eget quam nec nulla sagittis finibus. Donec fringilla gravida arcu id mattis. Sed arcu risus, viverra ut enim nec, pharetra varius massa. Pellentesque gravida leo in odio rutrum, eget consequat leo laoreet. Nullam fringilla vel arcu et vulputate. Duis diam mi, mattis eu semper sed, maximus vel mi. In auctor imperdiet erat, eu ullamcorper leo lobortis quis.  </p>
+			</div>
+			<div class="block">
+				<img src="http://www.arasaac.org/repositorio/thumbs/10/200/2/2406.png" alt="">
+				<p>Aenean vitae porttitor nisl. Aliquam erat volutpat. Etiam efficitur urna euismod porta lobortis. Pellentesque elementum mauris augue, id feugiat enim eleifend eu. Quisque tempor, tortor ac ultrices commodo, erat erat suscipit lorem, sit amet volutpat sapien quam vel dui. Morbi porttitor leo at nulla tincidunt, at ultrices neque rhoncus. Aliquam eget sollicitudin neque. Praesent blandit justo id nibh sagittis, sed varius libero mollis. </p>
+			</div>
+			<div class="block">
+				<img src="http://www.arasaac.org/repositorio/thumbs/10/200/3/34082.png" alt="">
+				<p>Suspendisse pharetra feugiat nulla id pulvinar. Ut consequat eget sapien eget commodo. Proin hendrerit odio non ante consectetur, pulvinar porta sapien eleifend. Praesent auctor ex vitae purus rutrum, faucibus venenatis magna bibendum. Integer scelerisque ornare est, eu iaculis urna tincidunt id. Cras in tincidunt odio. Sed quis elit vestibulum, egestas urna quis, molestie massa. </p>
+			</div>
+				
+				
+				
+				
+				
+		</div>
+		
+		<!--
+			Welcome <%= name %>  <br> Your email address is <%= email %> <br><br>
+			
+		-->
+		<div class="comments">
+			<form action="">
+				<label for="comments">Comments</label>
+				<textarea name="comments" id="comments" rows="10"></textarea>
+				<button>Comment the article</button>
+			</form>
+			
+		</div>
+		
+	</article>
+
+</body>

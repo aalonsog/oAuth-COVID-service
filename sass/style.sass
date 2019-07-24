@@ -1,0 +1,76 @@
+/* GENERAL */
+html, body
+    margin: 0
+    padding: 0
+    font-family: sans-serif
+    font-size: 1em
+    line-height: 1.3em
+
+.highContrast
+    background-color: black
+    color: white
+
+/* PAGES */
+nav
+    padding: 20px
+    -webkit-box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75);
+    box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75);
+    display: flex
+    justify-content: space-between
+    .title
+        font-weight: bold
+        font-size: 1.6em
+        padding: 10px
+    .userblock
+        display: flex
+        .user
+            display: flex
+            .name
+                padding: 10px
+            img
+                border-radius: 25px
+                height: 40px
+                width: 40px
+    img
+        max-width: 50px
+
+.headerimg
+    width: 100%
+
+article
+    padding: 2em
+    margin: 0 auto
+    max-width: 900px
+    .author
+        display: flex
+        align-items: center
+        .imgauthor 
+            display: flex
+            align-items: center
+            img            
+                border-radius: 25px
+                margin-right: 20px
+                max-height: 100px
+        .data .name
+            font-weight: bold
+
+    .boxcontent
+        .block
+            display: flex
+            img
+                width: 100%
+                margin-right: 20px
+
+/* CONTROLS */
+
+label, textarea
+    display: block
+textarea
+    width: 100%
+button
+    height: 40px
+    min-width: 100px
+    cursor: pointer
+    font-size: 0.9em
+    

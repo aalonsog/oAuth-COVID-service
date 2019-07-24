@@ -6,18 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 </head>
-<body class="<%= high_contrast ? 'highContrast' : '' %>">
+<body>
 
 	<nav>
 		<div class="title">Blog</div>
-		<div class="userblock">
-			<div class="user">
-				<img src="http://placekitten.com/40/40" alt="Kitten2">
-				<div class="name"><%= name %></div>
-			</div>
-			<button onclick="window.location.href='\logout'">Log out</button>
-		</div>
-		
+		<button onclick="window.location.href='\auth'">Log in with FI-WARE Account</button>
 	</nav>
 	<img class="headerimg" src="http://placekitten.com/1200/250" alt="Kitten"/>
 	<article>
@@ -38,17 +31,6 @@
 		<p>Morbi massa ipsum, ullamcorper at libero in, cursus auctor ex. Aliquam eget quam nec nulla sagittis finibus. Donec fringilla gravida arcu id mattis. Sed arcu risus, viverra ut enim nec, pharetra varius massa. Pellentesque gravida leo in odio rutrum, eget consequat leo laoreet. Nullam fringilla vel arcu et vulputate. Duis diam mi, mattis eu semper sed, maximus vel mi. In auctor imperdiet erat, eu ullamcorper leo lobortis quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent consequat ligula sed risus ornare, sit amet cursus leo posuere. Praesent ornare sollicitudin fermentum. Suspendisse auctor, libero ut tristique bibendum, orci tortor lobortis massa, nec ultrices augue neque ut leo. Aenean vel malesuada metus.</p>
 		<p>Aenean vitae porttitor nisl. Aliquam erat volutpat. Etiam efficitur urna euismod porta lobortis. Pellentesque elementum mauris augue, id feugiat enim eleifend eu. Quisque tempor, tortor ac ultrices commodo, erat erat suscipit lorem, sit amet volutpat sapien quam vel dui. Morbi porttitor leo at nulla tincidunt, at ultrices neque rhoncus. Aliquam eget sollicitudin neque. Praesent blandit justo id nibh sagittis, sed varius libero mollis. Morbi tincidunt lectus ut bibendum bibendum. Quisque eleifend risus quis velit condimentum consequat. Integer sagittis libero ut orci varius vulputate. Duis sed purus dapibus dolor dapibus ultrices sed a leo. Fusce molestie leo eget velit dignissim rutrum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sit amet porta enim, ac tristique tellus.</p>
 		<p>Suspendisse pharetra feugiat nulla id pulvinar. Ut consequat eget sapien eget commodo. Proin hendrerit odio non ante consectetur, pulvinar porta sapien eleifend. Praesent auctor ex vitae purus rutrum, faucibus venenatis magna bibendum. Integer scelerisque ornare est, eu iaculis urna tincidunt id. Cras in tincidunt odio. Sed quis elit vestibulum, egestas urna quis, molestie massa. Mauris imperdiet, nulla vel tempor cursus, justo dui faucibus nunc, vitae aliquam nisi nunc eget lacus. Aenean egestas at ipsum eu sollicitudin. Vestibulum magna turpis, volutpat et quam a, sagittis pellentesque ante. </p>
-		<!--
-			Welcome <%= name %>  <br> Your email address is <%= email %> <br><br>
-			
-		-->
-		<div class="comments">
-			<form action="">
-				<label for="comments">Comments</label>
-				<textarea name="comments" id="comments" rows="10"></textarea>
-				<button>Publish</button>
-			</form>
-		</div>
 		
 	</article>
 
