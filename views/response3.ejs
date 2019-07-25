@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Static Website | response 1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<nav>
+		<div class="title">Blog</div>
+		<div class="userblock">
+			<div class="user">
+				<div class="name">Hello <%= name %></div>
+            </div>
+            <button onclick="window.location.href='\logout'">Log out</button>
+		</div>
+		
+	</nav>
+	<img class="headerimg" src="https://www.zebrablinds.com/media/wysiwyg/alexa-google/alexa-banner.jpg" alt="Alexa device"/>
+	<article>
+		<h1>Open an Alexa Service</h1>
+		<p>The Voice User Interface is working via Alexa Amazon Service. To use the service, you need to activate the skill 'Selected News'. Once you activate the skill, you can say 'Alexa, open Selected News'.</p>
+        <p>If you prefer, you can continue and consume the information here, in the browser</p>	
+        <button onclick="window.location.href='/response1'">Continue</button>
+        <button onclick="window.location.href='/response1low'">Continue with high contrast</button>
+	</article>
+
+</body>

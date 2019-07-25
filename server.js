@@ -76,9 +76,11 @@ app.get('/', function(req, res){
         .then (response => {
 
             const user = JSON.parse(response);
-            
+
             //remove when keyrock attributes
-            user.attributes = { vision: 0, colour_perception: 0, hearing: 100, vocal_capability: 0, cognition: 60 };
+            //user.attributes = { vision: 50, colour_perception: 0, hearing: 100, vocal_capability: 0, cognition: 0 };
+            
+            // Render different view 
 
             // LOW VISION
             if(user.attributes.vision < 85 && user.attributes.vision != 0){
@@ -86,12 +88,15 @@ app.get('/', function(req, res){
             }
             // BLIND
             else if(user.attributes.vision >= 85){
-                //res.render('response1', { name: user.username, email: user.email });
+                res.render('response3', { name: user.username, email: user.email });
             }
             // COGNITION
             else if(user.attributes.cognition > 50){
                 res.render('response2', { name: user.username, email: user.email });
             }
+            // OTHER ATTRIBUTES....
+            // Ccan design and develop as many interfaces as needed
+
             // DEFAULT
             else{
                 res.render('response1', { name: user.username, email: user.email, high_contrast: false });
@@ -140,6 +145,32 @@ app.get('/logout', function(req, res){
 
     req.session.access_token = undefined;
     res.redirect('/');
+});
+
+// Redirection to Response1 with high contrast
+app.get('/response1low', (req, res) => {
+    const url = config.idmURL + '/user';
+
+    // Using the access token asks the IDM for the user info
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);
+        res.render('response1', { name: user.username, email: user.email, high_contrast: true });    
+    });
+    
+});
+
+// Redirection to Response1
+app.get('/response1', (req, res) => {
+    const url = config.idmURL + '/user';
+
+    // Using the access token asks the IDM for the user info
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);
+        res.render('response1', { name: user.username, email: user.email, high_contrast: false });    
+    });
+    
 });
 
 app.set('port', port);
