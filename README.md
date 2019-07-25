@@ -1,7 +1,7 @@
 oauth2 Client
 ===================
 
-Oauth2 authentication a11y case of use for FI-WARE GE applications
+Oauth2 authentication a11y use-case for FI-WARE GE applications
 
 - Software requirements:
 
