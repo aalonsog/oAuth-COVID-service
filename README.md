@@ -1,4 +1,4 @@
-oauth2-example-client
+oauth2 Client
 ===================
 
 Oauth2 authentication example for FI-WARE GE applications
