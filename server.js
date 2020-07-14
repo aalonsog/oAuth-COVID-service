@@ -6,8 +6,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const http = require('http');
+const path = require('path');
 const port = 81;
 const sass = require('node-sass-middleware');
+
+//const dfff = require('dialogflow-fulfillment');
 
 
 // Express configuration
@@ -27,8 +30,8 @@ app.use(session({
 //sass
 app.use(
     sass({
-        src: __dirname + '/sass',    // Input SASS files
-        dest: __dirname + '/public', // Output CSS
+        src: path.join(__dirname, '/sass'),    // Input SASS files
+        dest: path.join(__dirname, '/public'), // Output CSS
         debug: true,
         outputStyle: 'compressed',
         indentedSyntax: true              
@@ -36,17 +39,18 @@ app.use(
     express.static('public')
 );
 
-//app.use();
-
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
 
 
 // Config data from config.js file
+// eslint-disable-next-line camelcase
 const client_id = config.client_id;
+// eslint-disable-next-line camelcase
 const client_secret = config.client_secret;
 const idmURL = config.idmURL;
+// eslint-disable-next-line camelcase
 const response_type = config.response_type;
 const callbackURL = config.callbackURL;
 
@@ -64,7 +68,8 @@ app.get('/', function(req, res){
     // If auth_token is not stored in a session cookie it sends a button to redirect to IDM authentication portal 
     if(!req.session.access_token) {
         //res.send("Oauth2 IDM Demo.<br><br><button onclick='window.location.href=\"/auth\"'>Log in with FI-WARE Account</button>");
-        res.render('response0');
+        //res.render('response0');
+        res.render('response1', { name: 'user', email: 'user@user.com', high_contrast: true });
 
     // If auth_token is stored in a session cookie it sends a button to get user info
     } else {
@@ -83,7 +88,7 @@ app.get('/', function(req, res){
             // Render different view 
 
             // LOW VISION
-            if(user.attributes.vision < 85 && user.attributes.vision != 0){
+            if(user.attributes.vision < 85 && user.attributes.vision !== 0){
                 res.render('response1', { name: user.username, email: user.email, high_contrast: true });
             }
             // BLIND
@@ -123,8 +128,14 @@ app.get('/login', function(req, res){
 
 // Redirection to IDM authentication portal
 app.get('/auth', function(req, res){
-    const path = oa.getAuthorizeUrl(response_type);
-    res.redirect(path);
+    const path2 = oa.getAuthorizeUrl(response_type);
+    res.redirect(path2);
+});
+
+// Privacy policy
+app.get('/privacy_policy', function(req, res){
+    res.render('privacy_policy', { name: 'user', email: 'user@user.com', high_contrast: true });
+    
 });
 
 // Ask IDM for user info

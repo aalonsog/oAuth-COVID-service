@@ -5,23 +5,35 @@ html, body
     font-family: sans-serif
     font-size: 1em
     line-height: 1.3em
+    height: 100%
+a
+    text-decoration: none
 
 .highContrast
     background-color: black
     color: white
+    a
+        color: yellow
+    footer a
+        color: black
 
 /* PAGES */
 nav
-    padding: 20px
-    -webkit-box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75);
-    box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75);
+    padding: 15px
+    position: fixed
+    background-color: white
+    width: 100%
+    box-sizing: border-box   
+    -webkit-box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75)
+    -moz-box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75)
+    box-shadow: 0px 8px 10px -8px rgba(0,0,0,0.75)
     display: flex
     justify-content: space-between
     .title
         font-weight: bold
         font-size: 1.6em
         padding: 10px
+        cursor: pointer
     .userblock
         display: flex
         .user
@@ -74,3 +86,23 @@ button
     cursor: pointer
     font-size: 0.9em
     
+/* DIALOGFLOW */
+.dialogflow
+    height: 90%
+
+df-messenger.highContrast
+    --df-messenger-button-titlebar-color: black
+    --df-messenger-bot-message: black
+    --df-messenger-font-color: white
+    --df-messenger-user-message: orange
+
+
+
+
+/* FOOTER */
+footer
+    background-color: #FFAD01
+    color: black
+    padding: 10px
+
+
