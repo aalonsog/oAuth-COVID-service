@@ -68,9 +68,7 @@ app.get('/', function(req, res){
     // If auth_token is not stored in a session cookie it sends a button to redirect to IDM authentication portal 
     if(!req.session.access_token) {
         //res.send("Oauth2 IDM Demo.<br><br><button onclick='window.location.href=\"/auth\"'>Log in with FI-WARE Account</button>");
-        //res.render('response0');
-        res.render('response1', { name: 'user', email: 'user@user.com', high_contrast: true });
-
+        res.render('response0');        
     // If auth_token is stored in a session cookie it sends a button to get user info
     } else {
         //res.send("Successfully authenticated. <br><br> Your oauth access_token: " +req.session.access_token + "<br><br><button onclick='window.location.href=\"/user_info\"'>Get my user info</button>");
