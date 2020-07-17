@@ -79,22 +79,22 @@ app.get('/', function(req, res){
         .then (response => {
 
             const user = JSON.parse(response);
-
+            console.log(user);
             //remove when keyrock attributes
             //user.attributes = { vision: 50, colour_perception: 0, hearing: 100, vocal_capability: 0, cognition: 0 };
             
             // Render different view 
 
             // LOW VISION
-            if(user.attributes.vision < 85 && user.attributes.vision !== 0){
+            if(user.eidas_profile.Vision < 85 && user.eidas_profile.Vision !== 0){
                 res.render('response1', { name: user.username, email: user.email, high_contrast: true });
             }
             // BLIND
-            else if(user.attributes.vision >= 85){
+            else if(user.eidas_profile.Vision >= 85){
                 res.render('response3', { name: user.username, email: user.email });
             }
             // COGNITION
-            else if(user.attributes.cognition > 50){
+            else if(user.eidas_profile.Cognition > 50){
                 res.render('response2', { name: user.username, email: user.email });
             }
             // OTHER ATTRIBUTES....
@@ -132,7 +132,12 @@ app.get('/auth', function(req, res){
 
 // Privacy policy
 app.get('/privacy_policy', function(req, res){
-    res.render('privacy_policy', { name: 'user', email: 'user@user.com', high_contrast: true });
+    if(!req.session.access_token) {
+        res.render('privacy_policy', {name: null, high_contrast: false }); 
+    }else{
+        res.render('privacy_policy', { name: 'user', email: 'user@user.com', high_contrast: true });
+    }
+    
     
 });
 
