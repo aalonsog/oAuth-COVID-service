@@ -7,9 +7,11 @@ html, body
     font-size: 1em
     line-height: 2em
     height: 100%
+    
 a
     text-decoration: none
-
+body
+    background-color: #74CED9 
 .highContrast
     background-color: #171717
     color: white
@@ -18,10 +20,14 @@ a
     footer a
         color: black
 
+h2
+    font-size: 1.2em
+
 /* PAGES */
 nav
-    padding: 15px
+    padding: 5px
     position: fixed
+    top: 0
     background-color: white
     width: 100%
     box-sizing: border-box   
@@ -55,29 +61,29 @@ nav
     width: 100%
     margin-top: 80px
 
-article
-    padding: 2em
-    margin: 0 auto
-    max-width: 900px
-    .author
+section 
+    display: flex
+    aside
+        width: 30%
+        iframe
+            position: fixed
+            top: 62px
+            right: 0
+            border: none
+            height: 50%
+    .main
+        padding: 8em 2em
+        margin: 0 auto
+        max-width: 900px
         display: flex
-        align-items: center
-        .imgauthor 
-            display: flex
-            align-items: center
-            img            
-                border-radius: 25px
-                margin-right: 20px
-                max-height: 100px
-        .data .name
-            font-weight: bold
-
-    .boxcontent
-        .block
-            display: flex
-            img
-                width: 100%
-                margin-right: 20px
+        flex-direction: column
+        align-items: center 
+        .boxcontent
+            .block
+                display: flex
+                img
+                    width: 100%
+                    margin-right: 20px
 
 /* CONTROLS */
 
@@ -90,6 +96,11 @@ button
     min-width: 100px
     cursor: pointer
     font-size: 0.9em
+    background-color: #F1BF3A
+    border-radius: 3px
+    border: none
+    padding: 1px 10px
+
     
 /* DIALOGFLOW */
 .dialogflow
@@ -100,16 +111,15 @@ df-messenger.highContrast
     --df-messenger-bot-message: black
     --df-messenger-font-color: white
     --df-messenger-user-message: orange
-
-
-
+df-messenger
+    --df-messenger-button-titlebar-color: #F1BF3A
 
 /* FOOTER */
 footer
-    background-color: #FFAD01
+    background-color: #22717b
     color: black
     padding: 10px
     a
-        color: black
+        color: white
 
 
