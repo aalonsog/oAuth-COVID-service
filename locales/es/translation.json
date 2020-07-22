@@ -1,0 +1,27 @@
+{
+    "home": {
+      "title": "Bienvenido a este servicio web sobre la COVID",
+      "p1": "<strong>Accede al servicio usando eIDAS</strong> y te ayudaremos a mantenerte a salvo de la COVID-19.",
+      "p2": "Los <strong>coronavirus</strong> son una extensa familia de virus que pueden causar enfermedades tanto en animales como en humanos. En los humanos, se sabe que varios coronavirus causan infecciones respiratorias que pueden ir desde el resfriado común hasta enfermedades más graves como el síndrome respiratorio de Oriente Medio (MERS) y el síndrome respiratorio agudo severo (SRAS). El coronavirus que se ha descubierto más recientemente causa la enfermedad por coronavirus COVID-19.",
+      "p3": "La <strong>COVID‑19</strong> es la enfermedad infecciosa causada por el coronavirus que se ha descubierto más recientemente. Tanto este nuevo virus como la enfermedad que provoca eran desconocidos antes de que estallara el brote en Wuhan (China) en diciembre de 2019. Actualmente la COVID‑19 es una pandemia que afecta a muchos países de todo el mundo.",
+      "p4": "Los <strong>síntomas más habituales</strong> de la COVID-19 son la fiebre, la tos seca y el cansancio. Otros síntomas menos frecuentes que afectan a algunos pacientes son los dolores y molestias, la congestión nasal, el dolor de cabeza, la conjuntivitis, el dolor de garganta, la diarrea, la pérdida del gusto o el olfato y las erupciones cutáneas o cambios de color en los dedos de las manos o los pies. Estos síntomas suelen ser leves y comienzan gradualmente. Algunas de las personas infectadas solo presentan síntomas levísimos."
+    
+    },
+    "response1": {
+        "subtitle1": "¿Qué es el COVID?",
+        "subtitle2": "¿Cómo puedo protegerme del COVID?",
+        "subtitle3": "¿Cómo puedo saber si tengo COVID?"        
+    },
+    "footer": {
+        "privacy_policy": "Política privacidad",
+        "imagesFrom": "Imágenes de "
+    },
+    "nav": {        
+        "login_eIDAS": "Accede con eIDAS",
+        "logout": "Salir"         
+    },
+    "languages":{
+        "english": "Inglés",
+        "spanish": "Español"
+    }
+}

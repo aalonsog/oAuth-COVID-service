@@ -9,15 +9,42 @@ const http = require('http');
 const path = require('path');
 const port = 81;
 const sass = require('node-sass-middleware');
+const i18next = require('i18next');
+const i18nextMiddleware = require('i18next-http-middleware');
+const Backend = require('i18next-fs-backend')
 
 //const dfff = require('dialogflow-fulfillment');
+
+
+//i18n config
+i18next
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    backend: {
+      // eslint-disable-next-line no-path-concat
+      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
+      // eslint-disable-next-line no-path-concat
+      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+    },
+    detection: {
+        order: ['querystring', 'cookie'],
+        caches: ['cookie']
+      },
+    fallbackLng: 'es',
+    preload: ['en', 'es'],
+    saveMissing: true
+  })
+
 
 
 // Express configuration
 const app = express();
 app.use(logger('dev'));
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
+
 // parse application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -38,6 +65,9 @@ app.use(
     }),
     express.static('public')
 );
+
+//i18n
+app.use(i18nextMiddleware.handle(i18next))
 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
@@ -62,13 +92,16 @@ const oa = new OAuth2(client_id,
                     '/oauth2/token',
                     callbackURL);
 
+
 // Handles requests to the main page
 app.get('/', function(req, res){
+    
+    //res.send(req.t('home.title'))
 
     // If auth_token is not stored in a session cookie it sends a button to redirect to IDM authentication portal 
     if(!req.session.access_token) {
         //res.send("Oauth2 IDM Demo.<br><br><button onclick='window.location.href=\"/auth\"'>Log in with FI-WARE Account</button>");
-        res.render('response0');        
+        res.render('response0', {lng : req.lng} );        
     // If auth_token is stored in a session cookie it sends a button to get user info
     } else {
         //res.send("Successfully authenticated. <br><br> Your oauth access_token: " +req.session.access_token + "<br><br><button onclick='window.location.href=\"/user_info\"'>Get my user info</button>");
@@ -80,34 +113,56 @@ app.get('/', function(req, res){
 
             const user = JSON.parse(response);
             console.log(user);
-            //remove when keyrock attributes
-            //user.attributes = { vision: 50, colour_perception: 0, hearing: 100, vocal_capability: 0, cognition: 0 };
             
-            // Render different view 
+            // Render conditional views 
 
             // LOW VISION
             if(user.eidas_profile.Vision < 85 && user.eidas_profile.Vision !== 0){
-                res.render('response1', { name: user.username, email: user.email, high_contrast: true });
+                res.render('response1', 
+                { 
+                    lng : req.lng, 
+                    name: user.username, 
+                    email: user.email, 
+                    high_contrast: true 
+                });
             }
             // BLIND
             else if(user.eidas_profile.Vision >= 85){
-                res.render('response3', { name: user.username, email: user.email });
+                res.render('response3', 
+                { 
+                    lng : req.lng, 
+                    name: user.username, 
+                    email: user.email 
+                });
             }
             // COGNITION
             else if(user.eidas_profile.Cognition > 50){
-                res.render('response2', { name: user.username, email: user.email });
+                res.render('response2', 
+                { 
+                    lng : req.lng, 
+                    name: user.username, 
+                    email: user.email 
+                });
             }
             // OTHER ATTRIBUTES....
-            // Ccan design and develop as many interfaces as needed
+            // We can design and develop as many interfaces as needed
 
             // DEFAULT
             else{
-                res.render('response1', { name: user.username, email: user.email, high_contrast: false });
+                res.render('response1', 
+                { 
+                    lng : req.lng, 
+                    name: user.username, 
+                    email: user.email, 
+                    high_contrast: false 
+                });
             }
             
         });
     }
 });
+
+
 
 // Handles requests from IDM with the access code
 app.get('/login', function(req, res){
@@ -169,7 +224,13 @@ app.get('/response1low', (req, res) => {
     oa.get(url, req.session.access_token)
     .then (response => {
         const user = JSON.parse(response);
-        res.render('response1', { name: user.username, email: user.email, high_contrast: true });    
+        res.render('response1', 
+        { 
+            lng : req.lng, 
+            name: user.username, 
+            email: user.email, 
+            high_contrast: true 
+        });    
     });
     
 });
@@ -182,7 +243,32 @@ app.get('/response1', (req, res) => {
     oa.get(url, req.session.access_token)
     .then (response => {
         const user = JSON.parse(response);
-        res.render('response1', { name: user.username, email: user.email, high_contrast: false });    
+        res.render('response1', 
+        { 
+            lng : req.lng,
+            name: user.username, 
+            email: user.email, 
+            high_contrast: false 
+        });    
+    });
+    
+});
+
+// Redirection to Response2
+app.get('/response2', (req, res) => {
+    const url = config.idmURL + '/user';
+
+    // Using the access token asks the IDM for the user info
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);
+        res.render('response2', 
+        { 
+            lng : req.lng,
+            name: user.username, 
+            email: user.email, 
+            high_contrast: false  
+        });    
     });
     
 });
@@ -234,5 +320,3 @@ const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListeningServer);
-
-
