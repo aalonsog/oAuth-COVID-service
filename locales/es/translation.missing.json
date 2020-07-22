@@ -1,0 +1,19 @@
+{
+  "confirmation": {
+    "PCR": {
+      "title": "confirmation.PCR.title",
+      "subtitle1": "confirmation.PCR.subtitle1",
+      "p1": "confirmation.PCR.p1",
+      "subtitle2": "confirmation.PCR.subtitle2",
+      "p2": "confirmation.PCR.p2"
+    }
+  },
+  "actions": {
+    "order": "actions.order",
+    "cancel": "actions.cancel",
+    "back_main": "actions.back_main"
+  },
+  "response1": {
+    "p1": "response1.p1"
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>COVID-WS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;400;600;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="<%= high_contrast ? 'highContrast' : '' %>">
+	<header class="<%= high_contrast ? 'highContrast' : '' %>">
+		<div onclick="window.location.href='\'" class="title">COVID-WS</div>
+		<div class="languages">
+			<a <% if (lng === 'en') { %>class="active" <% } %> href="/?lng=en"><%= t('languages.english') %></a> |
+			<a <% if (lng === 'es') { %>class="active" <% } %> href="/?lng=es"><%= t('languages.spanish') %></a>
+		</div>
+		<div class="userblock">
+			<div class="user">
+				<img src="http://placekitten.com/40/40" alt="Kitten2">
+				<div class="name"><%= name %></div>
+			</div>
+			<button class="secondary" onclick="window.location.href='\logout'"><%= t('header.logout') %></button>
+		</div>		
+	</header>
+	
+	<section>
+		<article class="main confirmation">
+			
+			<% if(order === 'PCR'){ %>
+				<h1><%= name %>, <%= t('confirmation.PCR.title') %> </h1>
+				<h2><%= t('confirmation.PCR.subtitle1') %></h2>
+				<p><%= t('confirmation.PCR.p1') %></p>
+				<h2><%= t('confirmation.PCR.subtitle2') %></h2>
+				<p><%= t('confirmation.PCR.p2') %></p>				
+			<% } %>
+			<% if(order === 'RT'){ %>
+				<h1><%= name %>, <%= t('confirmation.RT.title') %> </h1>
+				<h2><%= t('confirmation.RT.subtitle1') %></h2>
+				<p><%- t('confirmation.RT.p1') %></p>
+				<p><%- t('confirmation.RT.p2') %></p>
+				<h2><%= t('confirmation.RT.subtitle2') %></h2>
+				<p><%= t('confirmation.RT.p3') %></p>
+			<% } %>
+			<% if(order === 'masks'){ %>
+				<h1><%= name %>, <%= t('confirmation.masks.title') %></h1>
+				<h2><%= t('confirmation.masks.subtitle1') %></h2>
+				<p><%= t('confirmation.masks.p1') %></p>
+				<p><%- t('confirmation.masks.p2') %></p>
+				<p><%- t('confirmation.masks.p3') %></p>
+				<p><%- t('confirmation.masks.p4') %></p>
+				<h2><%= t('confirmation.masks.subtitle2') %></h2>
+				<p><%= t('confirmation.masks.p5') %></p>
+				<h2><%= t('confirmation.masks.subtitle3') %></h2>
+				<p><%= t('confirmation.masks.p6') %></p>
+				
+			<% } %>
+			<div>
+				<button class="marginRight" onclick="window.location.href='\cite_request?order=<%= order%>'"><%= t('actions.order') %></button>
+				<button class="secondary" onclick="window.location.href='/'"><%= t('actions.cancel') %></button>				
+			</div>
+		</article>			
+	</section>
+	<footer>
+		<a href="\privacy_policy"><%= t('footer.privacy_policy') %></a>
+		<span><%= t('footer.imagesFrom') %> <a href="https://cocomaterial.com/" target="_blank">Cocomaterial</a></span>
+	</footer>
+</body>
+</html>

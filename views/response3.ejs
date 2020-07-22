@@ -27,10 +27,22 @@
 		</div>
 	</header>
 	<nav>
-		<button class="marginRight" onclick="window.location.href='\'"><%= t('actions.orderPCR') %></button>
-		<button class="marginRight" onclick="window.location.href='\'"><%= t('actions.orderRT') %></button>
-		<button class="marginRight" onclick="window.location.href='\'"><%= t('actions.orderClothFace') %></button>
-		<button class="marginRight" onclick="window.location.href='\'"><%= t('actions.orderGel') %></button>	
+		<button
+			<%= global.PCR ? 'disabled' : '' %>			 
+			class="marginRight" 
+			onclick="window.location.href='\confirmation?order=PCR'">
+			<%= t('actions.orderPCR') %></button>
+		<button
+			<%= global.RT ? 'disabled' : '' %>			 
+			class="marginRight" 
+			onclick="window.location.href='\confirmation?order=RT'">
+			<%= t('actions.orderRT') %></button>
+		<button
+			<%= global.masks ? 'disabled' : '' %>			 
+			class="marginRight" 
+			onclick="window.location.href='\confirmation?order=masks'">
+			<%= t('actions.orderClothFace') %></button>
+		
 		<button class="marginRight" onclick="window.location.href='\'">
 			<svg aria-labelledby="help" class="icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 				<title id="help">Botón de ayuda</title>

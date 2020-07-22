@@ -1,43 +1,84 @@
 {
-    "home": {
-      "title": "Welcome to this COVID service",
-      "p1": "<strong>Login to this web service using eIDAS</strong> and we will help you to be safe from COVID-19.",
-      "p2": "<strong>Coronaviruses</strong> are a large family of viruses that can cause disease in both animals and humans. In humans, several coronaviruses are known to cause respiratory infections that can range from the common cold to more serious illnesses such as the Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes COVID-19.",
-      "p3": "<strong>COVID-19</strong> is the most recently discovered infectious disease caused by the coronavirus. Both this new virus and the disease it causes were unknown before the outbreak in Wuhan, China, in December 2019. COVID-19 is now a pandemic affecting many countries around the world.",
-      "p4": "The <strong>most common symptoms</strong> of COVID-19 are fever, dry cough and tiredness. Other less common symptoms that affect some patients are aches and pains, nasal congestion, headache, conjunctivitis, sore throat, diarrhea, loss of taste or smell, and skin rashes or color changes in the fingers or toes. These symptoms are usually mild and begin gradually. Some of the infected people have only very mild symptoms."
+  "actions":{
+    "back_main":"Back to home",
+    "orderPCR":"Order PCR",
+    "orderRT":"Order rapid test",
+    "orderClothFace":"Order safe kit",
+    "orderGel":"Order hydroalcoholic gel",
+    "continue": "Continue",
+    "continueHC": "Continue with high contrast",
+    "continueER": "Continue with easy reading",
+    "order": "Order",
+    "cancel": "Cancel"
+  },  
+  "confirmation":{
+    "PCR": {
+        "title": "está usted solicitando un test PCR",
+        "subtitle1": "Sobre el PCR",
+        "p1": "Para realizar este test se toma una muestra respiratoria. Detectan el ARN (ácido ribonucleico) del virus, es decir, un fragmento del material genético de un patógeno o microorganismo. Su grado de sensibilidad es alto (son los más fiables) y el diagnóstico se puede saber en varias horas. La parte negativa es que su manejo es complejo y laborioso y requiere de personal médico para su resolución.",
+        "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.",
+        "p2": "¿está usted seguro de que quiere solicitar esta prueba?"	
     },
-    "response1": {
-      "subtitle1": "What is COVID?",
-      "subtitle2": "How can I protect myself?",
-      "subtitle3": "How do I know if I have COVID?"        
+    "RT":{
+        "title": "está usted solicitando un test rápido",
+        "subtitle1": "Sobre los test rápidos",
+        "p1": "<strong>Test serológico (ELISA)</strong>. Es un test que permite detectar los anticuerpos producidos tras el contacto con el virus.  No es inmediato, ya que se analiza en el laboratorio. Si el resultado es positivo indica la presencia de inmunoglobulinas, es decir, la persona ha estado expuesta al virus, pero puede ser una infección activa o pasada. Para saber si la infección está activa o ya ha pasado, se estudian los tipos de inmunoglobulinas.",
+        "p2": "<strong>Test rápido</strong>. Puede analizarse una muestra de saliva, un frotis nasal o una punción capilar. Facilitan el resultado en 10-15 minutos, por lo que no precisan laboratorio. Se emplean para realizar el cribado de los pacientes sintomáticos y del personal sanitario.",
+        "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.",
+        "p3": "¿está usted seguro de que quiere solicitar esta prueba?"	
     },
-    "response3": {
-      "title": "Use another integrated service",
-      "subtitle1": "Google Assistant",
-      "subtitle2": "Telegram bot",
-      "p1": "We have developed a voice user interface that works through the Google Assistant. To use the service, you have to follow this link. Select a device (Android mobile, google home... ) and you will see an application launch. That's it, you can say 'Ok google, open COVIBot services'",
-      "p2": "COVIBot is working also via Telegram. To use the service, you need to look for '@oAuthCoviBot'.",
-      "p3": "If you prefer, you can continue and consume the information here, in the browser"
-    },
-    "footer": {
-        "privacy_policy": "Privacy policy",
-        "imagesFrom": "Imágenes de "
-    },
-    "header": {        
-        "login_eIDAS": "Login with eIDAS",
-        "logout": "Logout"        
-    },
-    "actions":{
-      "orderPCR":"Order PCR",
-      "orderRT":"Order rapid test",
-      "orderClothFace":"Order masks",
-      "orderGel":"Order hydroalcoholic gel",
-      "continue": "Continue",
-      "continueHC": "Continue with high contrast",
-      "continueER": "Continue with easy reading"
-    },
-    "languages":{
-        "english": "English",
-        "spanish": "Spanish"
+    "masks":{
+        "title": "está usted solicitando 10 mascarillas N95 + 1 bote de gel hidroalcohólico",
+        "subtitle1": "Sobre las mascarillas",
+        "p1": "Las mascarillas, combinadas con otras medidas preventivas como lavarse las manos con frecuencia y el distanciamiento físico, ayudan a hacer más lenta la trasmisión del virus.",
+        "p2": "<strong>Mascarillas quirúrjicas</strong>. son descartables, no quedan ajustadas, y protegen la nariz y la boca del que la usa del contacto con gotitas, salpicaduras y aspersiones que puedan contener microbios. También filtran las partículas grandes en el aire.",
+        "p3": "<strong>Mascarillas N95</strong>. Son un tipo de respirador. Ofrecen más protección que una mascarilla quirúrgica porque pueden filtrar tanto las partículas grandes como las pequeñas.",
+        "p4": "<strong>Mascarillas de tela</strong>. Mientras que las mascarillas quirúrgicas y las N95 quizás escaseen y deben reservarse para los proveedores de atención médica, es fácil encontrar o hacer mascarillas de tela, y pueden lavarse y volver a usarse. Pueden fabricarse de materiales comunes, como sábanas de algodón con hilado apretado. Es fácil encontrar instrucciones en Internet. Las mascarillas de tela deben tener varias capas.",
+        "subtitle2": "Sobre el gel hidroalcohólico", 
+        "p5": "Para que el gel que hemos adquirido actúe contra los virus debe contener etanol. El etanol tiene una actividad virucida más fuerte y más amplia en comparación con otro tipo de alcoholes como los propanoles. Debemos evitar aquellos geles hidroalcohólicos que no estén avalados por la AEMPS y no muestren actividad viricida.",
+        "subtitle3": "Si confirma esta solicitud, un repartidor acurdirá a su domicilio el día (fecha) para entregarle las mascarillas y el gel.",
+        "p6": "¿está usted seguro de que quiere solicitar las mascarillas N95 y el gel?"	
     }
+    
+  },
+  "footer": {
+    "privacy_policy": "Privacy policy",
+    "imagesFrom": "Imágenes de "
+  },
+  "header": {        
+      "login_eIDAS": "Login with eIDAS",
+      "logout": "Logout"        
+  },
+  "home": {
+    "title_meta": "Home",
+    "title": "Welcome to this COVID service",
+    "p1": "<strong>Login to this web service using eIDAS</strong> and we will help you to be safe from COVID-19.",
+    "p2": "<strong>Coronaviruses</strong> are a large family of viruses that can cause disease in both animals and humans. In humans, several coronaviruses are known to cause respiratory infections that can range from the common cold to more serious illnesses such as the Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes COVID-19.",
+    "p3": "<strong>COVID-19</strong> is the most recently discovered infectious disease caused by the coronavirus. Both this new virus and the disease it causes were unknown before the outbreak in Wuhan, China, in December 2019. COVID-19 is now a pandemic affecting many countries around the world.",
+    "p4": "The <strong>most common symptoms</strong> of COVID-19 are fever, dry cough and tiredness. Other less common symptoms that affect some patients are aches and pains, nasal congestion, headache, conjunctivitis, sore throat, diarrhea, loss of taste or smell, and skin rashes or color changes in the fingers or toes. These symptoms are usually mild and begin gradually. Some of the infected people have only very mild symptoms."
+  },
+  "languages":{
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "response1": {
+    "subtitle1": "What is COVID?",
+    "subtitle2": "How can I protect myself?",
+    "subtitle3": "How do I know if I have COVID?",    
+    "p1":"There are several precautions that can be taken to reduce the likelihood of contracting or spreading COVID-19.<ul><li>Wash your hands thoroughly and often using an alcohol-based disinfectant or soap and water.</li><li>Maintain a minimum distance of one meter between you and others.</li><li>Avoid going to crowded places.</li><li>Avoid touching your eyes, nose and mouth.</li><li>Stay home and isolate yourself even if you have mild symptoms such as a cough, headache, and slight fever until you recover.</li><li>Ask someone to bring your supplies. If you have to leave the house, wear a mask so as not to infect others.</li><li>Keep informed of the latest developments from reliable sources, such as the WHO or local and national health authorities.</li></ul>"    
+  },
+  "response2": {
+    "subtitle1": "",
+    "subtitle2": "",
+    "subtitle3": ""        
+  },
+  "response3": {
+    "title": "Use another integrated service",
+    "subtitle1": "Google Assistant",
+    "subtitle2": "Telegram bot",
+    "p1": "We have developed a voice user interface that works through the Google Assistant. To use the service, you have to follow this link. Select a device (Android mobile, google home... ) and you will see an application launch. That's it, you can say 'Ok google, open COVIBot services'",
+    "p2": "COVIBot is working also via Telegram. To use the service, you need to look for '@oAuthCoviBot'.",
+    "p3": "If you prefer, you can continue and consume the information here, in the browser"
+  }
+  
 }

@@ -14,7 +14,10 @@ const i18nextMiddleware = require('i18next-http-middleware');
 const Backend = require('i18next-fs-backend')
 
 //const dfff = require('dialogflow-fulfillment');
-
+//global variables
+global.PCR = false;
+global.RT = false;
+global.masks = false;
 
 //i18n config
 i18next
@@ -111,27 +114,30 @@ app.get('/', function(req, res){
             
             // Render conditional views 
 
-            // LOW VISION
-            if(user.eidas_profile.Vision < 85 && user.eidas_profile.Vision !== 0){
-                res.render('response1', 
-                { 
-                    lng : req.lng, 
-                    name: user.username, 
-                    email: user.email, 
-                    high_contrast: true 
-                });
-            }
-            // BLIND
-            else if(user.eidas_profile.Vision >= 85){
-                res.render('response3', 
-                { 
-                    lng : req.lng, 
-                    name: user.username, 
-                    email: user.email 
-                });
-            }
+            // VISION
+            if(user.eidas_profile.Vision !== 0){                
+                if(user.eidas_profile.Vision < 100){
+                    // LOW VISION (high contrast)
+                    res.render('response1', 
+                    { 
+                        lng : req.lng, 
+                        name: user.username, 
+                        email: user.email, 
+                        high_contrast: true 
+                    });
+                }else{
+                    // BLIND
+                    res.render('response4', 
+                    { 
+                        lng : req.lng, 
+                        name: user.username, 
+                        email: user.email,
+                        high_contrast: false 
+                    });
+                }                
+            }           
             // COGNITION
-            else if(user.eidas_profile.Cognition > 50){
+            else if(user.eidas_profile.Cognition !== 0){
                 res.render('response2', 
                 { 
                     lng : req.lng, 
@@ -180,30 +186,6 @@ app.get('/auth', function(req, res){
     res.redirect(path2);
 });
 
-// Privacy policy
-app.get('/privacy_policy', function(req, res){
-    if(!req.session.access_token) {
-        res.render('privacy_policy', {name: null, high_contrast: false }); 
-    }else{
-        res.render('privacy_policy', { name: 'user', email: 'user@user.com', high_contrast: true });
-    }
-    
-    
-});
-
-// Ask IDM for user info
-app.get('/user_info', function(req, res){
-    const url = config.idmURL + '/user';
-
-    // Using the access token asks the IDM for the user info
-    oa.get(url, req.session.access_token)
-    .then (response => {
-
-        const user = JSON.parse(response);
-        res.send("Welcome " + user.displayName + "<br> Your email address is " + user.email + "<br><br><button onclick='window.location.href=\"/logout\"'>Log out</button>");
-    });
-});
-
 // Handles logout requests to remove access_token from the session cookie
 app.get('/logout', function(req, res){
 
@@ -214,8 +196,7 @@ app.get('/logout', function(req, res){
 // Redirection to Response1 with high contrast
 app.get('/response1low', (req, res) => {
     const url = config.idmURL + '/user';
-
-    // Using the access token asks the IDM for the user info
+    
     oa.get(url, req.session.access_token)
     .then (response => {
         const user = JSON.parse(response);
@@ -267,6 +248,62 @@ app.get('/response2', (req, res) => {
     });
     
 });
+
+// Redirection to Privacy policy
+app.get('/privacy_policy', function(req, res){
+    if(!req.session.access_token) {
+        res.render('privacy_policy', {name: null, high_contrast: false }); 
+    }else{
+        const url = config.idmURL + '/user';
+        oa.get(url, req.session.access_token)
+        .then (response => {
+            const user = JSON.parse(response);
+            res.render('privacy_policy', 
+            { 
+                lng : req.lng,
+                name: user.username, 
+                email: user.email, 
+                high_contrast: (user.eidas_profile.Vision > 85 && user.eidas_profile.Vision !== 0)
+            });    
+        });  
+    }        
+});
+
+// Redirection to Confirmation
+app.get('/confirmation', (req, res) => {
+    const url = config.idmURL + '/user';
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);        
+        res.render('confirmation', 
+        { 
+            lng: req.lng,
+            name: user.username, 
+            email: user.email, 
+            //high_contrast: (user.eidas_profile.Vision > 85 && user.eidas_profile.Vision !== 0),
+            high_contrast: false,
+            order: req.query.order
+        });    
+    });    
+});
+// Redirection to Confirmation
+app.get('/cite_request', (req, res) => {
+    const url = config.idmURL + '/user';
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);        
+        res.render('cite_request', 
+        { 
+            lng: req.lng,
+            name: user.username, 
+            email: user.email, 
+            //high_contrast: (user.eidas_profile.Vision > 85 && user.eidas_profile.Vision !== 0),
+            high_contrast: false,
+            order: req.query.order
+        });    
+    });    
+});
+
 
 app.set('port', port);
 

@@ -1,24 +1,45 @@
 {
-    "home": {
-      "title": "Bienvenido a este servicio web sobre la COVID",
-      "p1": "<strong>Accede al servicio usando eIDAS</strong> y te ayudaremos a mantenerte a salvo de la COVID-19.",
-      "p2": "Los <strong>coronavirus</strong> son una extensa familia de virus que pueden causar enfermedades tanto en animales como en humanos. En los humanos, se sabe que varios coronavirus causan infecciones respiratorias que pueden ir desde el resfriado común hasta enfermedades más graves como el síndrome respiratorio de Oriente Medio (MERS) y el síndrome respiratorio agudo severo (SRAS). El coronavirus que se ha descubierto más recientemente causa la enfermedad por coronavirus COVID-19.",
-      "p3": "La <strong>COVID‑19</strong> es la enfermedad infecciosa causada por el coronavirus que se ha descubierto más recientemente. Tanto este nuevo virus como la enfermedad que provoca eran desconocidos antes de que estallara el brote en Wuhan (China) en diciembre de 2019. Actualmente la COVID‑19 es una pandemia que afecta a muchos países de todo el mundo.",
-      "p4": "Los <strong>síntomas más habituales</strong> de la COVID-19 son la fiebre, la tos seca y el cansancio. Otros síntomas menos frecuentes que afectan a algunos pacientes son los dolores y molestias, la congestión nasal, el dolor de cabeza, la conjuntivitis, el dolor de garganta, la diarrea, la pérdida del gusto o el olfato y las erupciones cutáneas o cambios de color en los dedos de las manos o los pies. Estos síntomas suelen ser leves y comienzan gradualmente. Algunas de las personas infectadas solo presentan síntomas levísimos."
-    
+    "actions":{
+        "back_main":"Volver a la página principal",
+        "orderPCR":"Pedir PCR",
+        "orderRT":"Pedir test rápido",
+        "orderClothFace":"Pedir kit medidas",
+        "orderGel":"Pedir gel hidroalcoholico",
+        "continue": "Continuar",
+        "continueHC": "Continuar con alto contraste",
+        "continueER": "Continuar con lectura fácil",
+        "order": "Solicitar",
+        "cancel": "Cancelar"
     },
-    "response1": {
-        "subtitle1": "¿Qué es el COVID?",
-        "subtitle2": "¿Cómo puedo protegerme del COVID?",
-        "subtitle3": "¿Cómo puedo saber si tengo COVID?"        
-    },
-    "response3": {
-        "title": "Usa otro servicio integrado",
-        "subtitle1": "Asistente Google",
-        "subtitle2": "Telegram bot",
-        "p1": "Hemos desarrollado una interfaz de usuario de voz que funciona a través del Asistente de Google. Para usar el servicio, tienes que seguir este enlace (enlace). Selecciona un dispositivo (móvil Android, google home... ) y verás que se lanza una aplicación. Listo, ya puedes decir 'Ok google, abre los servicios de COVIBot'",
-        "p2": "COVIBot también funciona via Telegram. Para usar el servicio, tienes que buscar el usuario '@oAuthCoviBot' en telegram.",
-        "p3": "Si lo prefieres puedes continuar y consumir la información aquí, en el navegador."
+    "confirmation":{
+        "PCR": {
+            "title": "está usted solicitando un test PCR",
+            "subtitle1": "Sobre el PCR",
+            "p1": "Para realizar este test se toma una muestra respiratoria. Detectan el ARN (ácido ribonucleico) del virus, es decir, un fragmento del material genético de un patógeno o microorganismo. Su grado de sensibilidad es alto (son los más fiables) y el diagnóstico se puede saber en varias horas. La parte negativa es que su manejo es complejo y laborioso y requiere de personal médico para su resolución.",
+            "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.",
+            "p2": "¿está usted seguro de que quiere solicitar esta prueba?"	
+        },
+        "RT":{
+            "title": "está usted solicitando un test rápido",
+            "subtitle1": "Sobre los test rápidos",
+            "p1": "<strong>Test serológico (ELISA)</strong>. Es un test que permite detectar los anticuerpos producidos tras el contacto con el virus.  No es inmediato, ya que se analiza en el laboratorio. Si el resultado es positivo indica la presencia de inmunoglobulinas, es decir, la persona ha estado expuesta al virus, pero puede ser una infección activa o pasada. Para saber si la infección está activa o ya ha pasado, se estudian los tipos de inmunoglobulinas.",
+            "p2": "<strong>Test rápido</strong>. Puede analizarse una muestra de saliva, un frotis nasal o una punción capilar. Facilitan el resultado en 10-15 minutos, por lo que no precisan laboratorio. Se emplean para realizar el cribado de los pacientes sintomáticos y del personal sanitario.",
+            "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.",
+            "p3": "¿está usted seguro de que quiere solicitar esta prueba?"	
+        },
+        "masks":{
+            "title": "está usted solicitando 10 mascarillas N95 + 1 bote de gel hidroalcohólico",
+            "subtitle1": "Sobre las mascarillas",
+            "p1": "Las mascarillas, combinadas con otras medidas preventivas como lavarse las manos con frecuencia y el distanciamiento físico, ayudan a hacer más lenta la trasmisión del virus.",
+            "p2": "<strong>Mascarillas quirúrjicas</strong>. son descartables, no quedan ajustadas, y protegen la nariz y la boca del que la usa del contacto con gotitas, salpicaduras y aspersiones que puedan contener microbios. También filtran las partículas grandes en el aire.",
+            "p3": "<strong>Mascarillas N95</strong>. Son un tipo de respirador. Ofrecen más protección que una mascarilla quirúrgica porque pueden filtrar tanto las partículas grandes como las pequeñas.",
+            "p4": "<strong>Mascarillas de tela</strong>. Mientras que las mascarillas quirúrgicas y las N95 quizás escaseen y deben reservarse para los proveedores de atención médica, es fácil encontrar o hacer mascarillas de tela, y pueden lavarse y volver a usarse. Pueden fabricarse de materiales comunes, como sábanas de algodón con hilado apretado. Es fácil encontrar instrucciones en Internet. Las mascarillas de tela deben tener varias capas.",
+            "subtitle2": "Sobre el gel hidroalcohólico", 
+            "p5": "Para que el gel que hemos adquirido actúe contra los virus debe contener etanol. El etanol tiene una actividad virucida más fuerte y más amplia en comparación con otro tipo de alcoholes como los propanoles. Debemos evitar aquellos geles hidroalcohólicos que no estén avalados por la AEMPS y no muestren actividad viricida.",
+            "subtitle3": "Si confirma esta solicitud, un repartidor acurdirá a su domicilio el día (fecha) para entregarle las mascarillas y el gel.",
+            "p6": "¿está usted seguro de que quiere solicitar las mascarillas N95 y el gel?"	
+        }
+        
     },
     "footer": {
         "privacy_policy": "Política privacidad",
@@ -28,17 +49,36 @@
         "login_eIDAS": "Accede con eIDAS",
         "logout": "Salir"         
     },
-    "actions":{
-        "orderPCR":"Pedir PCR",
-        "orderRT":"Pedir test rápido",
-        "orderClothFace":"Pedir mascarillas",
-        "orderGel":"Pedir gel hidroalcoholico",
-        "continue": "Continuar",
-        "continueHC": "Continuar con alto contraste",
-        "continueER": "Continuar con lectura fácil"
+    "home": {
+        "title_meta": "Página principal",
+        "title": "Bienvenido a este servicio web sobre la COVID",
+        "p1": "<strong>Accede al servicio usando eIDAS</strong> y te ayudaremos a mantenerte a salvo de la COVID-19.",
+        "p2": "Los <strong>coronavirus</strong> son una extensa familia de virus que pueden causar enfermedades tanto en animales como en humanos. En los humanos, se sabe que varios coronavirus causan infecciones respiratorias que pueden ir desde el resfriado común hasta enfermedades más graves como el síndrome respiratorio de Oriente Medio (MERS) y el síndrome respiratorio agudo severo (SRAS). El coronavirus que se ha descubierto más recientemente causa la enfermedad por coronavirus COVID-19.",
+        "p3": "La <strong>COVID‑19</strong> es la enfermedad infecciosa causada por el coronavirus que se ha descubierto más recientemente. Tanto este nuevo virus como la enfermedad que provoca eran desconocidos antes de que estallara el brote en Wuhan (China) en diciembre de 2019. Actualmente la COVID‑19 es una pandemia que afecta a muchos países de todo el mundo.",
+        "p4": "Los <strong>síntomas más habituales</strong> de la COVID-19 son la fiebre, la tos seca y el cansancio. Otros síntomas menos frecuentes que afectan a algunos pacientes son los dolores y molestias, la congestión nasal, el dolor de cabeza, la conjuntivitis, el dolor de garganta, la diarrea, la pérdida del gusto o el olfato y las erupciones cutáneas o cambios de color en los dedos de las manos o los pies. Estos síntomas suelen ser leves y comienzan gradualmente. Algunas de las personas infectadas solo presentan síntomas levísimos."
+
     },
     "languages":{
         "english": "Inglés",
         "spanish": "Español"
+    },
+    "response1": {
+        "subtitle1": "¿Qué es la COVID?",
+        "subtitle2": "¿Cómo puedo protegerme de la COVID?",
+        "subtitle3": "¿Cómo puedo saber si tengo COVID?",
+        "p1": "Hay varias precauciones que se pueden adoptar para reducir la probabilidad de contraer o propagar la COVID‑19<ul><li>Lávese las manos a fondo y con frecuencia usando un desinfectante a base de alcohol o con agua y jabón.</li><li>Mantenga una distancia mínima de un metro entre usted y los demás.</li><li>Evite ir a lugares concurridos</li><li>Evite tocarse los ojos, la nariz y la boca</li><li> Permanezca en casa y aíslese incluso si presenta síntomas leves como tos, dolor de cabeza y fiebre ligera hasta que se recupere. Pida a alguien que le traiga las provisiones. Si tiene que salir de casa, póngase una mascarilla para no infectar a otras personas.</li><li>Manténgase informado sobre las últimas novedades a partir de fuentes fiables, como la OMS o las autoridades sanitarias locales y nacionales.</li></ul>"        
+    },
+    "response2": {
+        "subtitle1": "",
+        "subtitle2": "",
+        "subtitle3": ""        
+    },
+    "response3": {
+        "title": "Usa otro servicio integrado",
+        "subtitle1": "Asistente Google",
+        "subtitle2": "Telegram bot",
+        "p1": "Hemos desarrollado una interfaz de usuario de voz que funciona a través del Asistente de Google. Para usar el servicio, tienes que seguir este enlace (enlace). Selecciona un dispositivo (móvil Android, google home... ) y verás que se lanza una aplicación. Listo, ya puedes decir 'Ok google, abre los servicios de COVIBot'",
+        "p2": "COVIBot también funciona via Telegram. Para usar el servicio, tienes que buscar el usuario '@oAuthCoviBot' en telegram.",
+        "p3": "Si lo prefieres puedes continuar y consumir la información aquí, en el navegador."
     }
 }
