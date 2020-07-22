@@ -95,16 +95,11 @@ const oa = new OAuth2(client_id,
 
 // Handles requests to the main page
 app.get('/', function(req, res){
-    
-    //res.send(req.t('home.title'))
-
-    // If auth_token is not stored in a session cookie it sends a button to redirect to IDM authentication portal 
-    if(!req.session.access_token) {
-        //res.send("Oauth2 IDM Demo.<br><br><button onclick='window.location.href=\"/auth\"'>Log in with FI-WARE Account</button>");
-        res.render('response0', {lng : req.lng} );        
-    // If auth_token is stored in a session cookie it sends a button to get user info
+        
+    if(!req.session.access_token) {        
+        res.render('response0', {lng : req.lng} );            
     } else {
-        //res.send("Successfully authenticated. <br><br> Your oauth access_token: " +req.session.access_token + "<br><br><button onclick='window.location.href=\"/user_info\"'>Get my user info</button>");
+        
         const url = config.idmURL + '/user';
 
         // Using the access token asks the IDM for the user info

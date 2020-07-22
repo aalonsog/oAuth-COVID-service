@@ -12,13 +12,30 @@
         "subtitle2": "¿Cómo puedo protegerme del COVID?",
         "subtitle3": "¿Cómo puedo saber si tengo COVID?"        
     },
+    "response3": {
+        "title": "Usa otro servicio integrado",
+        "subtitle1": "Asistente Google",
+        "subtitle2": "Telegram bot",
+        "p1": "Hemos desarrollado una interfaz de usuario de voz que funciona a través del Asistente de Google. Para usar el servicio, tienes que seguir este enlace (enlace). Selecciona un dispositivo (móvil Android, google home... ) y verás que se lanza una aplicación. Listo, ya puedes decir 'Ok google, abre los servicios de COVIBot'",
+        "p2": "COVIBot también funciona via Telegram. Para usar el servicio, tienes que buscar el usuario '@oAuthCoviBot' en telegram.",
+        "p3": "Si lo prefieres puedes continuar y consumir la información aquí, en el navegador."
+    },
     "footer": {
         "privacy_policy": "Política privacidad",
         "imagesFrom": "Imágenes de "
     },
-    "nav": {        
+    "header": {        
         "login_eIDAS": "Accede con eIDAS",
         "logout": "Salir"         
+    },
+    "actions":{
+        "orderPCR":"Pedir PCR",
+        "orderRT":"Pedir test rápido",
+        "orderClothFace":"Pedir mascarillas",
+        "orderGel":"Pedir gel hidroalcoholico",
+        "continue": "Continuar",
+        "continueHC": "Continuar con alto contraste",
+        "continueER": "Continuar con lectura fácil"
     },
     "languages":{
         "english": "Inglés",

@@ -24,10 +24,10 @@
 					<img src="http://placekitten.com/40/40" alt="Kitten2">
 					<div class="name"><%= name %></div>
 				</div>
-				<button onclick="window.location.href='\logout'"><%= t('nav.logout') %></button>
+				<button onclick="window.location.href='\logout'"><%= t('header.logout') %></button>
 			</div>
 		<% } else { %>
-			<button onclick="window.location.href='\auth'"><%= t('nav.login_eIDAS') %></button>
+			<button onclick="window.location.href='\auth'"><%= t('header.login_eIDAS') %></button>
 		<% } %>
 	</header>
 	<% if (name != null) { %>
