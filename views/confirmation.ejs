@@ -27,22 +27,22 @@
 		<article class="main confirmation">
 			
 			<% if(order === 'PCR'){ %>
-				<h1><%= name %>, <%= t('confirmation.PCR.title') %> </h1>
+				<h1><%= t('confirmation.PCR.title',{ name: name }) %> </h1>
 				<h2><%= t('confirmation.PCR.subtitle1') %></h2>
 				<p><%= t('confirmation.PCR.p1') %></p>
-				<h2><%= t('confirmation.PCR.subtitle2') %></h2>
+				<h2><%- t('confirmation.PCR.subtitle2',{ date: global.citeDate }) %></h2>
 				<p><%= t('confirmation.PCR.p2') %></p>				
 			<% } %>
 			<% if(order === 'RT'){ %>
-				<h1><%= name %>, <%= t('confirmation.RT.title') %> </h1>
+				<h1><%= t('confirmation.RT.title',{ name: name }) %> </h1>
 				<h2><%= t('confirmation.RT.subtitle1') %></h2>
 				<p><%- t('confirmation.RT.p1') %></p>
 				<p><%- t('confirmation.RT.p2') %></p>
-				<h2><%= t('confirmation.RT.subtitle2') %></h2>
+				<h2><%- t('confirmation.RT.subtitle2',{ date: global.citeDate }) %></h2>
 				<p><%= t('confirmation.RT.p3') %></p>
 			<% } %>
 			<% if(order === 'masks'){ %>
-				<h1><%= name %>, <%= t('confirmation.masks.title') %></h1>
+				<h1><%= t('confirmation.masks.title',{ name: name }) %></h1>
 				<h2><%= t('confirmation.masks.subtitle1') %></h2>
 				<p><%= t('confirmation.masks.p1') %></p>
 				<p><%- t('confirmation.masks.p2') %></p>
@@ -50,7 +50,7 @@
 				<p><%- t('confirmation.masks.p4') %></p>
 				<h2><%= t('confirmation.masks.subtitle2') %></h2>
 				<p><%= t('confirmation.masks.p5') %></p>
-				<h2><%= t('confirmation.masks.subtitle3') %></h2>
+				<h2><%- t('confirmation.masks.subtitle3',{ date: global.citeDate }) %></h2>
 				<p><%= t('confirmation.masks.p6') %></p>
 				
 			<% } %>

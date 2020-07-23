@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body class="<%= high_contrast ? 'highContrast' : '' %>">
-
 	<header class="<%= high_contrast ? 'highContrast' : '' %>">
 		<div onclick="window.location.href='\'" class="title">COVID-WS</div>
 		<div class="languages">
@@ -23,24 +22,23 @@
 			<button class="secondary" onclick="window.location.href='/logout'"><%= t('header.logout') %></button>
 		</div>		
 	</header>
-
 	<section>
 		<article class="main confirmation">
 
 			<% if(order === 'PCR'){ %>
-				<h1><%= name %>, ha solicitado un test PCR </h1>				
-				<h2>Un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.</h2>				
-				<p>Recibirá un email en el correo <%= email %> con la confirmación de esta cita</p>
+				<h1><%= t('cite_request.PCR.title',{ name: name }) %></h1>				
+				<h2><%- t('cite_request.PCR.subtitle1',{ date: global.citeDate }) %></h2>				
+				<p><%= t('cite_request.PCR.p1',{ email: email }) %></p>
 			<% global.PCR = true; } %>
 			<% if(order === 'RT'){ %>
-				<h1><%= name %>, ha solicitado un test rápido </h1>				
-				<h2>Un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra e indicarle los resultados.</h2>				
-				<p>Recibirá un email en el correo <%= email %> con la confirmación de esta cita</p>
+				<h1><%= t('cite_request.RT.title',{ name: name }) %></h1>				
+				<h2><%- t('cite_request.RT.subtitle1',{ date: global.citeDate }) %></h2>				
+				<p><%= t('cite_request.RT.p1',{ email: email }) %></p>
 			<% global.RT = true; } %>
 			<% if(order === 'masks'){ %>
-				<h1><%= name %>, ha solicitado 10 mascarillas N95 + 1 bote de gel hidroalcohólico</h1>				
-				<h2>Un repartidor acurdirá a su domicilio el día (fecha) para entregarle las mascarillas y el gel</h2>				
-				<p>Recibirá un email en el correo <%= email %> con la confirmación de esta solicitud</p>
+				<h1><%= t('cite_request.masks.title',{ name: name }) %></h1>				
+				<h2><%- t('cite_request.masks.subtitle1',{ date: global.citeDate }) %></h2>				
+				<p><%= t('cite_request.masks.p1',{ email: email }) %></p>
 			<% global.masks = true; } %>
 			<button onclick="window.location.href='/'"><%= t('actions.back_main') %></button>
 		</article>			

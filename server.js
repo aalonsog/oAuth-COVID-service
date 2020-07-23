@@ -11,13 +11,21 @@ const port = 81;
 const sass = require('node-sass-middleware');
 const i18next = require('i18next');
 const i18nextMiddleware = require('i18next-http-middleware');
-const Backend = require('i18next-fs-backend')
+const Backend = require('i18next-fs-backend');
 
 //const dfff = require('dialogflow-fulfillment');
-//global variables
+
+//Global variables
 global.PCR = false;
 global.RT = false;
 global.masks = false;
+global.citeDate = getTomorrow();
+
+function getTomorrow() {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return `${tomorrow.getDate()}/${tomorrow.getMonth() + 1}/${tomorrow.getFullYear()}`;
+}
 
 //i18n config
 i18next
@@ -27,8 +35,6 @@ i18next
     backend: {
       // eslint-disable-next-line no-path-concat
       loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
-      // eslint-disable-next-line no-path-concat
-      //addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
     },
     detection: {
         order: ['querystring', 'cookie'],
@@ -163,8 +169,6 @@ app.get('/', function(req, res){
     }
 });
 
-
-
 // Handles requests from IDM with the access code
 app.get('/login', function(req, res){
    
@@ -249,6 +253,25 @@ app.get('/response2', (req, res) => {
     
 });
 
+
+// Redirection to Response3
+app.get('/response3', (req, res) => {
+    const url = config.idmURL + '/user';
+
+    // Using the access token asks the IDM for the user info
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);
+        res.render('response3', 
+        { 
+            lng : req.lng,
+            name: user.username, 
+            email: user.email, 
+            high_contrast: false  
+        });    
+    });
+    
+});
 // Redirection to Privacy policy
 app.get('/privacy_policy', function(req, res){
     if(!req.session.access_token) {

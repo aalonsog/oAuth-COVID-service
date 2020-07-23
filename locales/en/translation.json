@@ -2,7 +2,7 @@
   "actions":{
     "back_main":"Back to home",
     "orderPCR":"Order PCR",
-    "orderRT":"Order rapid test",
+    "orderRT":"Order quick test",
     "orderClothFace":"Order safe kit",
     "orderGel":"Order hydroalcoholic gel",
     "continue": "Continue",
@@ -11,39 +11,56 @@
     "order": "Order",
     "cancel": "Cancel"
   },  
+  "cite_request":{
+    "PCR": {
+      "title": "{{ name }}, you requested a PCR test",
+      "subtitle1": "A member of the health staff will come to your home on {{ date }} at 12:00h to take the sample.",
+      "p1": "You will receive an email in the mail  {{ email }} with the confirmation of this appointment."
+    },
+    "RT": {
+      "title": "{{ name }}, you requested a quick test",
+      "subtitle1": "A member of the health staff will come to your home on {{ date }} at 12:00h to take the sample and give you the results.",
+      "p1": "You will receive an email in the mail  {{ email }} with the confirmation of this appointment."
+    },
+    "masks": {
+      "title": "{{ name }}, you requested 10 N95 masks + 1 bottle of hydroalcoholic gel",
+      "subtitle1": "A delivery person will come to your home on {{ date }} to deliver the masks and gel.",
+      "p1": "You will receive an email in the mail {{ email }} with the confirmation of this request."
+    }
+  },
   "confirmation":{
     "PCR": {
-        "title": "está usted solicitando un test PCR",
-        "subtitle1": "Sobre el PCR",
-        "p1": "Para realizar este test se toma una muestra respiratoria. Detectan el ARN (ácido ribonucleico) del virus, es decir, un fragmento del material genético de un patógeno o microorganismo. Su grado de sensibilidad es alto (son los más fiables) y el diagnóstico se puede saber en varias horas. La parte negativa es que su manejo es complejo y laborioso y requiere de personal médico para su resolución.",
-        "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.",
-        "p2": "¿está usted seguro de que quiere solicitar esta prueba?"	
+        "title": "{{ name }}, you are requesting a PCR test",
+        "subtitle1": "About PCR tests",
+        "p1": "A respiratory sample is taken for this test. They detect the RNA (ribonucleic acid) of the virus, that is, a fragment of the genetic material of a pathogen or microorganism. Their degree of sensitivity is high (they are the most reliable) and the diagnosis can be known in several hours. The negative part is that its management is complex and laborious and requires medical personnel for its resolution.",
+        "subtitle2": "If you confirm this request, a member of the health staff will come to your home on the day {{ date }} at 12 p.m to take the sample.",
+        "p2": "Are you sure you want to apply for this test?"	
     },
     "RT":{
-        "title": "está usted solicitando un test rápido",
-        "subtitle1": "Sobre los test rápidos",
-        "p1": "<strong>Test serológico (ELISA)</strong>. Es un test que permite detectar los anticuerpos producidos tras el contacto con el virus.  No es inmediato, ya que se analiza en el laboratorio. Si el resultado es positivo indica la presencia de inmunoglobulinas, es decir, la persona ha estado expuesta al virus, pero puede ser una infección activa o pasada. Para saber si la infección está activa o ya ha pasado, se estudian los tipos de inmunoglobulinas.",
-        "p2": "<strong>Test rápido</strong>. Puede analizarse una muestra de saliva, un frotis nasal o una punción capilar. Facilitan el resultado en 10-15 minutos, por lo que no precisan laboratorio. Se emplean para realizar el cribado de los pacientes sintomáticos y del personal sanitario.",
-        "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día (fecha) a las 12:00h para tomar la muestra.",
-        "p3": "¿está usted seguro de que quiere solicitar esta prueba?"	
+        "title": "{{ name }}, you are requesting a quick test",
+        "subtitle1": "About the quick tests",
+        "p1": "<strong>Serological test (ELISA)</strong>. It is a test that detects the antibodies produced after contact with the virus.  It is not immediate, as it is tested in the laboratory. If the result is positive, it indicates the presence of immunoglobulins, that is, the person has been exposed to the virus, but it can be an active or past infection. To find out if the infection is active or has passed, the types of immunoglobulins are studied.",
+        "p2": "<strong>Quick test</strong>. A saliva sample, a nasal smear or a hair puncture can be analyzed. They provide the result in 10-15 minutes, so no laboratory is required. They are used for screening symptomatic patients and health care personnel.",
+        "subtitle2": "If you confirm this request, a member of the health staff will come to your home on the day {{ date }} at 12 p.m to take the sample.",
+        "p3": "Are you sure you want to apply for this test?"	
     },
     "masks":{
-        "title": "está usted solicitando 10 mascarillas N95 + 1 bote de gel hidroalcohólico",
-        "subtitle1": "Sobre las mascarillas",
-        "p1": "Las mascarillas, combinadas con otras medidas preventivas como lavarse las manos con frecuencia y el distanciamiento físico, ayudan a hacer más lenta la trasmisión del virus.",
-        "p2": "<strong>Mascarillas quirúrjicas</strong>. son descartables, no quedan ajustadas, y protegen la nariz y la boca del que la usa del contacto con gotitas, salpicaduras y aspersiones que puedan contener microbios. También filtran las partículas grandes en el aire.",
-        "p3": "<strong>Mascarillas N95</strong>. Son un tipo de respirador. Ofrecen más protección que una mascarilla quirúrgica porque pueden filtrar tanto las partículas grandes como las pequeñas.",
-        "p4": "<strong>Mascarillas de tela</strong>. Mientras que las mascarillas quirúrgicas y las N95 quizás escaseen y deben reservarse para los proveedores de atención médica, es fácil encontrar o hacer mascarillas de tela, y pueden lavarse y volver a usarse. Pueden fabricarse de materiales comunes, como sábanas de algodón con hilado apretado. Es fácil encontrar instrucciones en Internet. Las mascarillas de tela deben tener varias capas.",
-        "subtitle2": "Sobre el gel hidroalcohólico", 
-        "p5": "Para que el gel que hemos adquirido actúe contra los virus debe contener etanol. El etanol tiene una actividad virucida más fuerte y más amplia en comparación con otro tipo de alcoholes como los propanoles. Debemos evitar aquellos geles hidroalcohólicos que no estén avalados por la AEMPS y no muestren actividad viricida.",
-        "subtitle3": "Si confirma esta solicitud, un repartidor acurdirá a su domicilio el día (fecha) para entregarle las mascarillas y el gel.",
-        "p6": "¿está usted seguro de que quiere solicitar las mascarillas N95 y el gel?"	
+        "title": "{{ name }}, you are requesting 10 N95 masks + 1 bottle of hydroalcoholic gel.",
+        "subtitle1": "About the masks",
+        "p1": "Masks, combined with other preventive measures such as frequent hand washing and physical distancing, help slow down the transmission of the virus.",
+        "p2": "<strong>Surgical masks</strong>. They are disposable, not tight, and protect the wearer's nose and mouth from contact with droplets, splashes and sprays that may contain germs. They also filter out large particles in the air.",
+        "p3": "<strong>N95 Masks</strong>. They're a kind of respirator. They offer more protection than a surgical mask because they can filter out both large and small particles.",
+        "p4": "<strong>Cloth masks</strong>. While surgical masks and N95s may be in short supply and should be reserved for health care providers, fabric masks are easy to find or make and can be washed and reused. They can be made from common materials, such as tightly woven cotton sheets. Instructions are easy to find on the Internet. Cloth masks should have several layers.",
+        "subtitle2": "About hydroalcoholic gel", 
+        "p5": "For the gel we have purchased to work against viruses, it must contain ethanol. Ethanol has stronger and more extensive virucidal activity compared to other types of alcohols such as propanols. We must avoid those hydroalcoholic gels that are not endorsed by AEMPS and do not show virucidal activity.",
+        "subtitle3": "If you confirm this request, a delivery person will come to your home on the day {{ date }} to deliver the masks and gel.",
+        "p6": "Are you sure you want to order the N95 masks and gel?"	
     }
     
   },
   "footer": {
     "privacy_policy": "Privacy policy",
-    "imagesFrom": "Imágenes de "
+    "imagesFrom": "Images from "
   },
   "header": {        
       "login_eIDAS": "Login with eIDAS",
