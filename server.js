@@ -28,7 +28,7 @@ i18next
       // eslint-disable-next-line no-path-concat
       loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
       // eslint-disable-next-line no-path-concat
-      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+      //addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
     },
     detection: {
         order: ['querystring', 'cookie'],
