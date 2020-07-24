@@ -63,13 +63,13 @@
     "imagesFrom": "Images from "
   },
   "header": {        
-      "login_eIDAS": "Login with eIDAS",
+      "login_eIDAS": "Login with eID",
       "logout": "Logout"        
   },
   "home": {
     "title_meta": "Home",
     "title": "Welcome to this COVID service",
-    "p1": "<strong>Login to this web service using eIDAS</strong> and we will help you to be safe from COVID-19.",
+    "p1": "<strong>Login to this web service using eID</strong> and we will help you to be safe from COVID-19.",
     "p2": "<strong>Coronaviruses</strong> are a large family of viruses that can cause disease in both animals and humans. In humans, several coronaviruses are known to cause respiratory infections that can range from the common cold to more serious illnesses such as the Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes COVID-19.",
     "p3": "<strong>COVID-19</strong> is the most recently discovered infectious disease caused by the coronavirus. Both this new virus and the disease it causes were unknown before the outbreak in Wuhan, China, in December 2019. COVID-19 is now a pandemic affecting many countries around the world.",
     "p4": "The <strong>most common symptoms</strong> of COVID-19 are fever, dry cough and tiredness. Other less common symptoms that affect some patients are aches and pains, nasal congestion, headache, conjunctivitis, sore throat, diarrhea, loss of taste or smell, and skin rashes or color changes in the fingers or toes. These symptoms are usually mild and begin gradually. Some of the infected people have only very mild symptoms."
