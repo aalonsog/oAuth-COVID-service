@@ -69,7 +69,7 @@
   "home": {
     "title_meta": "Home",
     "title": "Welcome to this COVID service",
-    "p1": "<strong>Login to this web service using eID</strong> and we will help you to be safe from COVID-19.",
+    "p1": "<strong>Login to this web service using eIDAS</strong> and we will help you to be safe from COVID-19.",
     "p2": "<strong>Coronaviruses</strong> are a large family of viruses that can cause disease in both animals and humans. In humans, several coronaviruses are known to cause respiratory infections that can range from the common cold to more serious illnesses such as the Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes COVID-19.",
     "p3": "<strong>COVID-19</strong> is the most recently discovered infectious disease caused by the coronavirus. Both this new virus and the disease it causes were unknown before the outbreak in Wuhan, China, in December 2019. COVID-19 is now a pandemic affecting many countries around the world.",
     "p4": "The <strong>most common symptoms</strong> of COVID-19 are fever, dry cough and tiredness. Other less common symptoms that affect some patients are aches and pains, nasal congestion, headache, conjunctivitis, sore throat, diarrhea, loss of taste or smell, and skin rashes or color changes in the fingers or toes. These symptoms are usually mild and begin gradually. Some of the infected people have only very mild symptoms."
@@ -85,9 +85,13 @@
     "p1":"There are several precautions that can be taken to reduce the likelihood of contracting or spreading COVID-19.<ul><li>Wash your hands thoroughly and often using an alcohol-based disinfectant or soap and water.</li><li>Maintain a minimum distance of one meter between you and others.</li><li>Avoid going to crowded places.</li><li>Avoid touching your eyes, nose and mouth.</li><li>Stay home and isolate yourself even if you have mild symptoms such as a cough, headache, and slight fever until you recover.</li><li>Ask someone to bring your supplies. If you have to leave the house, wear a mask so as not to infect others.</li><li>Keep informed of the latest developments from reliable sources, such as the WHO or local and national health authorities.</li></ul>"    
   },
   "response2": {
-    "subtitle1": "",
-    "subtitle2": "",
-    "subtitle3": ""        
+    "subtitle1": "How do I know if I have COVID-19?",
+    "subtitle2": "What should I do to avoid having the COVID-19?",
+    "p1": "<strong>Coronaviruses</strong> are a family of viruses that can cause <strong>illness in people and animals</strong>. In people, coronaviruses can cause colds or more serious things, such as breathing problems. <strong>Covid-19</strong> is a disease caused by the coronavirus that was discovered in December 2019. COVID-19 is now a pandemic that affects many countries around the world.",
+    "p2": "If you have the COVID-19, one of these things can happen to you:", 
+    "p3": "<ul><li>Fever</li><li>Dry cough</li><li>Fatigue</li><li>Aches and pains</li><li>Nasal congestion</li><li>Headache</li><li>Sore throat</li><li>Diarrhoea</li><li>Loss of taste or smell</li><li>Color changes in the fingers or toes</li></ul>",              
+    "p4":"<ul><li>Wash your hands many times with soap and water.</li><li>Use hand sanitizing gel all the time.</li><li>Keep a minimum distance of one meter from other people.</li><li>Don't go to crowded places (e.g. the subway or shopping malls)</li><li>Don't touch your eyes, nose or mouth</li><li>Stay home whenever you can. If you have a cough, headache or fever, stay home. Ask someone to bring you food. If you have to leave the house, put on a mask so you don't infect other people.</li><li>Look up information about COVID-19 every day or ask your friends and family.</li></ul>",
+    "p5": "<strong>If you feel sick, you can ask someone to come to your house to check if you have the COVID-19 by clicking on the 'Order PCR' or 'Order Quick Test' buttons. You can also ask for a mask and gel to be sent to you by clicking on the 'Order measurement kit' button.</strong>"              
   },
   "response3": {
     "title": "Use another integrated service",

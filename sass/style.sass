@@ -37,7 +37,7 @@ h2
     .languages a
         color: white
     nav
-        background-color: white
+        background-color: #F1BF3A
         top: 68px
         button
             background-color: black
@@ -45,7 +45,7 @@ h2
             &:disabled
                 color: gray
     footer 
-        background-color: white
+        background-color: #F1BF3A
         a
             color: black
         
@@ -184,3 +184,24 @@ footer
         color: white
 
 
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 700px)
+    header
+        flex-direction: column
+        img
+            display: none
+    nav
+        top: 145px
+    .highContrast nav
+        top: 165px
+    section .main
+        padding: 13em 1.5em 1em
+        .mobile_hide
+            display: none
+        .boxcontent .block
+            flex-direction: column
+            .illustration_small
+                margin: 20px auto
+                width: 60%
+                height: 60%

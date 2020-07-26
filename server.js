@@ -257,7 +257,6 @@ app.get('/response2', (req, res) => {
 // Redirection to Response3
 app.get('/response3', (req, res) => {
     const url = config.idmURL + '/user';
-
     // Using the access token asks the IDM for the user info
     oa.get(url, req.session.access_token)
     .then (response => {
@@ -269,9 +268,31 @@ app.get('/response3', (req, res) => {
             email: user.email, 
             high_contrast: false  
         });    
+    });    
+});
+
+
+// Redirection to Response4
+app.get('/response4', (req, res) => {
+    const url = config.idmURL + '/user';
+
+    // Using the access token asks the IDM for the user info
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);
+        res.render('response4', 
+        { 
+            lng : req.lng,
+            name: user.username, 
+            email: user.email, 
+            high_contrast: false  
+        });    
     });
     
 });
+
+
+
 // Redirection to Privacy policy
 app.get('/privacy_policy', function(req, res){
     if(!req.session.access_token) {
