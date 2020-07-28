@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="<% if (lng === 'en') { %>en<% } else { %>es<% } %>">
+<head>
+	<title>COVID-WS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;400;600;700&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="<%= high_contrast ? 'highContrast' : '' %>">
+
+	<header class="<%= high_contrast ? 'highContrast' : '' %>">
+		<div onclick="window.location.href='\'" class="title">COVID-WS</div>
+		<div class="languages">
+			<a <% if (lng === 'en') { %>class="active" <% } %> href="/?lng=en"><%= t('languages.english') %></a> |
+			<a <% if (lng === 'es') { %>class="active" <% } %> href="/?lng=es"><%= t('languages.spanish') %></a>
+		</div>
+		<div class="userblock">
+			<div class="user">				
+				<div class="name"><%= name %></div>
+			</div>
+			<button class="secondary" onclick="window.location.href='\logout'"><%= t('header.logout') %></button>
+		</div>		
+	</header>
+	<nav>
+		<button
+			<%= global.PCR ? 'disabled' : '' %>			 
+			class="marginRight" 
+			onclick="window.location.href='\confirmation?order=PCR'">
+			<%= t('actions.orderPCR') %></button>
+		<button
+			<%= global.RT ? 'disabled' : '' %>			 
+			class="marginRight" 
+			onclick="window.location.href='\confirmation?order=RT'">
+			<%= t('actions.orderRT') %></button>
+		<button
+			<%= global.masks ? 'disabled' : '' %>			 
+			class="marginRight" 
+			onclick="window.location.href='\confirmation?order=masks'">
+			<%= t('actions.orderClothFace') %></button>				
+	</nav>
+	<section>
+		<article class="main">	
+            <h1><%= t('home.title') %></h1>	
+			<iframe class="video" width="900" height="500" src="https://www.youtube.com/embed/p16EeXmjfwg?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope" allowfullscreen></iframe>
+			
+		</article>			
+	</section>
+	<footer>
+		<a href="\privacy_policy"><%= t('footer.privacy_policy') %></a>
+		<span><%= t('footer.imagesFrom') %> <a href="https://cocomaterial.com/" target="_blank">Cocomaterial</a></span>
+	</footer>
+</body>
+</html>

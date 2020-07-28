@@ -151,6 +151,15 @@ app.get('/', function(req, res){
                     email: user.email 
                 });
             }
+            // COGNITION
+            else if(user.eidas_profile.Hearing !== 0){
+                res.render('response5', 
+                { 
+                    lng : req.lng, 
+                    name: user.username, 
+                    email: user.email 
+                });
+            }
             // OTHER ATTRIBUTES....
             // We can design and develop as many interfaces as needed
 
@@ -281,6 +290,25 @@ app.get('/response4', (req, res) => {
     .then (response => {
         const user = JSON.parse(response);
         res.render('response4', 
+        { 
+            lng : req.lng,
+            name: user.username, 
+            email: user.email, 
+            high_contrast: false  
+        });    
+    });
+    
+});
+
+// Redirection to Response5
+app.get('/response5', (req, res) => {
+    const url = config.idmURL + '/user';
+
+    // Using the access token asks the IDM for the user info
+    oa.get(url, req.session.access_token)
+    .then (response => {
+        const user = JSON.parse(response);
+        res.render('response5', 
         { 
             lng : req.lng,
             name: user.username, 
