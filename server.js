@@ -12,8 +12,9 @@ const sass = require('node-sass-middleware');
 const i18next = require('i18next');
 const i18nextMiddleware = require('i18next-http-middleware');
 const Backend = require('i18next-fs-backend');
+const favicon = require('serve-favicon');
 
-//const dfff = require('dialogflow-fulfillment');
+
 
 //Global variables
 global.PCR = false;
@@ -50,6 +51,9 @@ i18next
 // Express configuration
 const app = express();
 app.use(logger('dev'));
+
+//Favicon
+app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
