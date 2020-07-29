@@ -14,17 +14,17 @@
     "cite_request":{
         "PCR": {
           "title": "{{ name }}, ha solicitado un test PCR",
-          "subtitle1": "Un miembro del personal sanitario acurdirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra.",
+          "subtitle1": "Un miembro del personal sanitario acudirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra.",
           "p1": "Recibirá un email en el correo {{ email }} con la confirmación de esta cita"
         },
         "RT": {
           "title": "{{ name }}, ha solicitado un test rápido",
-          "subtitle1": "Un miembro del personal sanitario acurdirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra e indicarle los resultados.",
+          "subtitle1": "Un miembro del personal sanitario acudirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra e indicarle los resultados.",
           "p1": "Recibirá un email en el correo {{ email }} con la confirmación de esta cita"
         },
         "masks": {
           "title": "{{ name }}, ha solicitado 10 mascarillas N95 + 1 bote de gel hidroalcohólico",
-          "subtitle1": "Un repartidor acurdirá a su domicilio el día {{ date }} para entregarle las mascarillas y el gel",
+          "subtitle1": "Un repartidor acudirá a su domicilio el día {{ date }} para entregarle las mascarillas y el gel",
           "p1": "Recibirá un email en el correo {{ email }} con la confirmación de esta solicitud"
     
         }
@@ -34,7 +34,7 @@
             "title": "{{ name }}, está usted solicitando un test PCR",
             "subtitle1": "Sobre los test PCR",
             "p1": "Para realizar este test se toma una muestra respiratoria. Detectan el ARN (ácido ribonucleico) del virus, es decir, un fragmento del material genético de un patógeno o microorganismo. Su grado de sensibilidad es alto (son los más fiables) y el diagnóstico se puede saber en varias horas. La parte negativa es que su manejo es complejo y laborioso y requiere de personal médico para su resolución.",
-            "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra.",
+            "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acudirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra.",
             "p2": "¿está usted seguro de que quiere solicitar esta prueba?"	
         },
         "RT":{
@@ -42,7 +42,7 @@
             "subtitle1": "Sobre los test rápidos",
             "p1": "<strong>Test serológico (ELISA)</strong>. Es un test que permite detectar los anticuerpos producidos tras el contacto con el virus.  No es inmediato, ya que se analiza en el laboratorio. Si el resultado es positivo indica la presencia de inmunoglobulinas, es decir, la persona ha estado expuesta al virus, pero puede ser una infección activa o pasada. Para saber si la infección está activa o ya ha pasado, se estudian los tipos de inmunoglobulinas.",
             "p2": "<strong>Test rápido</strong>. Puede analizarse una muestra de saliva, un frotis nasal o una punción capilar. Facilitan el resultado en 10-15 minutos, por lo que no precisan laboratorio. Se emplean para realizar el cribado de los pacientes sintomáticos y del personal sanitario.",
-            "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acurdirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra.",
+            "subtitle2": "Si confirma esta solicitud, un miembro del personal sanitario acudirá a su domicilio el día {{ date }} a las 12:00h para tomar la muestra.",
             "p3": "¿está usted seguro de que quiere solicitar esta prueba?"	
         },
         "masks":{
@@ -54,7 +54,7 @@
             "p4": "<strong>Mascarillas de tela</strong>. Mientras que las mascarillas quirúrgicas y las N95 quizás escaseen y deben reservarse para los proveedores de atención médica, es fácil encontrar o hacer mascarillas de tela, y pueden lavarse y volver a usarse. Pueden fabricarse de materiales comunes, como sábanas de algodón con hilado apretado. Es fácil encontrar instrucciones en Internet. Las mascarillas de tela deben tener varias capas.",
             "subtitle2": "Sobre el gel hidroalcohólico", 
             "p5": "Para que el gel que hemos adquirido actúe contra los virus debe contener etanol. El etanol tiene una actividad virucida más fuerte y más amplia en comparación con otro tipo de alcoholes como los propanoles. Debemos evitar aquellos geles hidroalcohólicos que no estén avalados por la AEMPS y no muestren actividad viricida.",
-            "subtitle3": "Si confirma esta solicitud, un repartidor acurdirá a su domicilio el día {{ date }} para entregarle las mascarillas y el gel.",
+            "subtitle3": "Si confirma esta solicitud, un repartidor acudirá a su domicilio el día {{ date }} para entregarle las mascarillas y el gel.",
             "p6": "¿está usted seguro de que quiere solicitar las mascarillas N95 y el gel?"	
         }        
     },
