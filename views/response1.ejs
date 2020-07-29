@@ -26,17 +26,17 @@
 		<button
 			<%= global.PCR ? 'disabled' : '' %>			 
 			class="marginRight" 
-			onclick="window.location.href='\confirmation?order=PCR'">
+			onclick="window.location.href='\confirmation?order=PCR&highcon=<%= high_contrast%>'">
 			<%= t('actions.orderPCR') %></button>
 		<button
 			<%= global.RT ? 'disabled' : '' %>			 
 			class="marginRight" 
-			onclick="window.location.href='\confirmation?order=RT'">
+			onclick="window.location.href='\confirmation?order=RT&highcon=<%= high_contrast%>'">
 			<%= t('actions.orderRT') %></button>
 		<button
 			<%= global.masks ? 'disabled' : '' %>			 
 			class="marginRight" 
-			onclick="window.location.href='\confirmation?order=masks'">
+			onclick="window.location.href='\confirmation?order=masks&highcon=<%= high_contrast%>'">
 			<%= t('actions.orderClothFace') %></button>
 		<% if(!high_contrast){ %>	
 			<button class="marginRight" onclick="toggleBot()">

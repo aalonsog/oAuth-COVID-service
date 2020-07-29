@@ -125,8 +125,8 @@ app.get('/', function(req, res){
             // Render conditional views 
 
             // VISION
-            if(user.eidas_profile.Vision !== 0){                
-                if(user.eidas_profile.Vision < 100){
+            if(parseInt(user.eidas_profile.Vision) !== 0){               
+                if(parseInt(user.eidas_profile.Vision) < 100){
                     // LOW VISION (high contrast)
                     res.render('response1', 
                     { 
@@ -147,7 +147,7 @@ app.get('/', function(req, res){
                 }                
             }           
             // COGNITION
-            else if(user.eidas_profile.Cognition !== 0){
+            else if(parseInt(user.eidas_profile.Cognition) !== 0){
                 res.render('response2', 
                 { 
                     lng : req.lng, 
@@ -155,8 +155,8 @@ app.get('/', function(req, res){
                     email: user.email 
                 });
             }
-            // COGNITION
-            else if(user.eidas_profile.Hearing !== 0){
+            // HEARING
+            else if(parseInt(user.eidas_profile.Hearing) === 100){
                 res.render('response5', 
                 { 
                     lng : req.lng, 
@@ -358,7 +358,8 @@ app.get('/confirmation', (req, res) => {
             email: user.email, 
             //high_contrast: (user.eidas_profile.Vision > 85 && user.eidas_profile.Vision !== 0),
             high_contrast: false,
-            order: req.query.order
+            order: req.query.order,
+            highcon: req.query.highcon
         });    
     });    
 });
@@ -375,7 +376,8 @@ app.get('/cite_request', (req, res) => {
             email: user.email, 
             //high_contrast: (user.eidas_profile.Vision > 85 && user.eidas_profile.Vision !== 0),
             high_contrast: false,
-            order: req.query.order
+            order: req.query.order,
+            highcon: req.query.highcon
         });    
     });    
 });

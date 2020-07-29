@@ -7,8 +7,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;400;600;700&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="style.css">
 </head>
-<body class="<%= high_contrast ? 'highContrast' : '' %>">
-	<header class="<%= high_contrast ? 'highContrast' : '' %>">
+<body class="<%= (highcon==='true') ? 'highContrast' : '' %>">
+	<header class="<%= (highcon==='true') ? 'highContrast' : '' %>">
 		<div onclick="window.location.href='\'" class="title">COVID-WS</div>
 		<div class="languages">
 			<a <% if (lng === 'en') { %>class="active" <% } %> href="/?lng=en"><%= t('languages.english') %></a> |
@@ -24,7 +24,7 @@
 	</header>
 	
 	<section>
-		<article class="main confirmation">
+		<article class="main confirmation <%= highcon==='true' ? 'highContrast' : '' %>">
 			
 			<% if(order === 'PCR'){ %>
 				<h1><%= t('confirmation.PCR.title',{ name: name }) %> </h1>
@@ -55,7 +55,7 @@
 				
 			<% } %>
 			<div>
-				<button class="marginRight" onclick="window.location.href='\cite_request?order=<%= order%>'"><%= t('actions.order') %></button>
+				<button class="marginRight" onclick="window.location.href='\cite_request?order=<%= order%>&highcon=<%= highcon %>'"><%= t('actions.order') %></button>
 				<button class="secondary" onclick="window.location.href='/'"><%= t('actions.cancel') %></button>				
 			</div>
 		</article>			
