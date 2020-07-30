@@ -29,17 +29,17 @@
 				<h1><%= t('cite_request.PCR.title',{ name: name }) %></h1>				
 				<h2><%- t('cite_request.PCR.subtitle1',{ date: global.citeDate }) %></h2>				
 				<p><%= t('cite_request.PCR.p1',{ email: email }) %></p>
-			<% global.PCR = true; } %>
+			<% locals.session.PCR = true; } %>
 			<% if(order === 'RT'){ %>
 				<h1><%= t('cite_request.RT.title',{ name: name }) %></h1>				
 				<h2><%- t('cite_request.RT.subtitle1',{ date: global.citeDate }) %></h2>				
 				<p><%= t('cite_request.RT.p1',{ email: email }) %></p>
-			<% global.RT = true; } %>
+			<% locals.session.RT = true; } %>
 			<% if(order === 'masks'){ %>
 				<h1><%= t('cite_request.masks.title',{ name: name }) %></h1>				
 				<h2><%- t('cite_request.masks.subtitle1',{ date: global.citeDate }) %></h2>				
 				<p><%= t('cite_request.masks.p1',{ email: email }) %></p>
-			<% global.masks = true; } %>
+			<% locals.session.masks = true; } %>
 			<button onclick="window.location.href='/'"><%= t('actions.back_main') %></button>
 		</article>			
 	</section>
